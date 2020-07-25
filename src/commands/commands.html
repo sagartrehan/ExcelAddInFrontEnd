@@ -1,0 +1,59 @@
+<!-- Copyright (c) Microsoft Corporation. All rights reserved. Licensed under the MIT License. -->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <!-- Office JavaScript API -->
+    <script type="text/javascript" src="https://appsforoffice.microsoft.com/lib/1.1/hosted/office.js"></script>
+    <script>
+        // The initialize function must be run each time a new page is loaded
+        (function () {
+            Office.initialize = function (reason) {
+               //If you need to initialize something you can do so here. 
+            };
+        })();
+
+            //Notice function needs to be in global namespace
+        function writeTextField1(event) {
+            //Consult Office.js API reference to see all you can do. This just shows the simplest action. 
+            Office.context.document.setSelectedDataAsync("<Profile1>",
+                function (asyncResult) {
+                    var error = asyncResult.error;
+                    if (asyncResult.status === "failed") {
+                        //show error. Upcoming displayDialog API will help here.
+                    }
+                    else {
+                        //show success.Upcoming displayDialog API will help here.
+                    }
+                });
+           //Required, call event.completed to let the platform know you are done processing. 
+	        event.completed();
+        }
+
+        function writeTextField2(event) {
+            //Consult Office.js API reference to see all you can do. This just shows the simplest action. 
+            Office.context.document.setSelectedDataAsync("<Profile2>",
+                function (asyncResult) {
+                    var error = asyncResult.error;
+                    if (asyncResult.status === "failed") {
+                        //show error. Upcoming displayDialog API will help here.
+                    }
+                    else {
+                        //show success.Upcoming displayDialog API will help here.
+                    }
+                });
+           //Required, call event.completed to let the platform know you are done processing. 
+	        event.completed();
+        }
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
